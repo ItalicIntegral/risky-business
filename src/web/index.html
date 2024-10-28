@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risky business</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Index</h1>
+    </header>
+    <main>
+        <nav class="width-resizable">
+            <h3>Navigation</h3>
+            <a href="./index.html">index</a>
+            <a href="./journal.html">journal</a>
+            <div class="flex-spacer"></div>
+            <a href="./login.html">log out</a>
+        </nav>
+        <div>
+            <section>section1</section>
+            <section>section2</section>
+        </div>
+        <aside>
+            <h3>Aside</h3>
+        </aside>
+    </main>
+    <footer>
+        <!-- <span id="currentTime"></span> -->
+        <p id="currentTime"></p>
+    </footer>
+
+    <script>
+        function showTime() {
+            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+        }
+        showTime();
+        setInterval(function () {
+            showTime();
+        }, 1000);
+    </script>
+</body>
+
+</html>

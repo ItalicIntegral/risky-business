@@ -1,0 +1,99 @@
+' https://plantuml.com
+' https://plantuml.com/guide
+
+' https://medium.com/@shiv.jalli_26300/diagrams-as-code-with-plantuml-79847c26c93b
+
+
+' Chen's Entity Relationship Notation
+' https://plantuml.com/er-diagram
+@startchen
+entity cashier {
+  id: number
+
+  name
+}
+entity customer {
+}
+entity item {
+}
+entity person {
+}
+entity user {
+}
+
+relationship sale {
+}
+
+user ->- U {cashier}
+
+' sale -1- customer
+' sale -n- product
+
+@endchen
+
+
+' https://medium.com/@elvis.gosselin/plantuml-for-database-modeling-1b71e6d4622d
+@startuml
+entity Customer {
+  -id: u32
+  --
+  -customer: [16]u8
+  +init(id, customer) 
+}
+entity Location {
+  -id: u32
+  --
+  -location: [16]u8
+  +init(id, location)
+}
+entity User {
+  -id: u32
+  --
+  -user: [16]u8
+  +init(id, user) 
+}
+
+entity Order {
+  -id: u32
+  --
+  -customer: u32
+  -item: u32
+  --
+  -units
+}
+
+Order }|--o| Customer
+' Order }|-- 
+@enduml
+
+' Examples
+
+@startuml
+abstract abstract
+abstract class "abstract class"
+annotation annotation
+circle circle
+() circle_short_form
+class class
+diamond diamond
+<> diamond_short_form
+entity entity
+enum enum
+interface interface
+@enduml
+
+@startuml
+Class01 <|-- Class02
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 -- Class10
+@enduml
+
+
+@startuml
+class Car
+Driver - Car : drives >
+Car *- Wheel : have 4 >
+Car -- Person : < owns
+@enduml

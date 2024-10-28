@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main>
+        <form id="login-form" action="/post" method="post" class="login-form">
+            <div class="login-form">
+                <label for="username">Username:
+                </label>
+                <input id="username" type="text" name="username" id="username" value="username">
+            </div>
+            <div class="login-form">
+                <label for="password">Password:
+                </label>
+                <input type="password" name="password" id="password" value="password">
+            </div>
+            <div class="login-form">
+                <button type="submit">submit</button>
+                <button type="reset">reset</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <h3>Debug</h3>
+        <a href="./index.html">index.html</a>
+        <p id="currentTime"></p>
+    </footer>
+
+    <script>
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        document.getElementById("login-form").onsubmit = formValidation;
+
+        function formValidation(event) {
+            event.preventDefault();
+            console.log('username: ' + username.value);
+            console.log('password: ' + password.value);
+            if (username.value === 'username' && password.value === 'password') {
+                setTimeout(function () {
+                    window.location.href = "./index.html";
+                }, 3000);
+            }
+        }
+        // formValidation();
+
+
+
+        function showTime() {
+            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+        }
+        showTime();
+        setInterval(function () {
+            showTime();
+        }, 1000);
+
+
+
+    </script>
+</body>
+
+</html>

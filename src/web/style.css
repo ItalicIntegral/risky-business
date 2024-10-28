@@ -1,0 +1,109 @@
+* {
+    /* border: 1px solid white; */
+    margin: 0;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+:root {
+    /* https://www.canva.com/colors/color-palettes/dark-road-curve/ */
+    --Ebony: #0a0708;
+    --CoolGray: #444444;
+    --Gray: #747474;
+    --Pewter: #b1b1b1;
+    
+    --black: #1e90ff;
+    --blue: #1e90ff;
+    --white: #ffffff;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    color: var(--Pewter);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--CoolGray);
+    height: 100vh;
+    margin: auto auto;
+}
+
+header {
+    background-color: var(--Ebony);
+    /* height: 3.6em; */
+}
+
+main {
+    display: flex;
+    flex-direction:row;
+    flex-grow: 1;
+    justify-content: space-between;
+    height: 8em;
+}
+
+footer {
+    background-color: var(--Ebony);
+    /* height: 6.5em; */
+}
+
+nav {
+    background-color: var(--Ebony);
+    border: 1px solid var(--Pewter);
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    /* gap: 10px; */
+    /* padding: 0.5em; */
+    width: 7em;
+}
+
+section {
+    display: block;
+    flex-grow: 1;
+}
+
+aside {
+    background-color: var(--Ebony);
+    border: 1px solid var(--Pewter);
+    width: 6em;
+}
+
+div {
+    flex-grow:1;
+    border: 1px solid yellow;
+}
+
+form {
+    margin: 0 auto;
+    width: auto;
+}
+
+label {
+    display: block;
+}
+
+/* h1, h2, h3, h4, h5 { border: 1px solid orangered; } */
+
+h1 {
+    padding: 0.2em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.1em;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.width-resizable {
+    overflow: hidden;
+    resize: horizontal;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}
