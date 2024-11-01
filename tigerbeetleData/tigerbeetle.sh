@@ -164,5 +164,7 @@ echo
 # 5050 - Travel Expenses
 # 5060 - Depreciation
 
+
 # Next challenge. Coding for tigerbeetle
 # https://docs.tigerbeetle.com/coding/
+# https://www.p99conf.io/session/a-deterministic-walk-down-tigerbeetles-main-street/
