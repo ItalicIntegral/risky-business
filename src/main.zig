@@ -2,15 +2,24 @@
 //! you are building an executable. If you are making a library, the convention
 //! is to delete this file and start with root.zig instead.
 const std = @import("std");
-// const heap = std.heap;
+const debugPrint = std.debug.print;
 
+const note = @import("note/note.zig");
+// const heap = std.heap;
 // const Sieve = @import("./prime.zig").Sieve;
-const SaleDetail = @import("saleDetail.zig");
-const SaleHeader = @import("saleHeader.zig");
+// const SaleDetail = @import("saleDetail.zig");
+// const SaleHeader = @import("saleHeader.zig");
 
 // const app = @import("./app.zig");
 
 pub fn main() !void {
+    note.sayHelloNote();
+    note.newNoteHtml();
+    const my_note = note.init("My note subject.", "My note body.");
+    my_note.printNoteJson();
+    const my_note2 = note.init("My second note subject.", "My second note body.");
+    my_note2.printNoteJson();
+
     // var allocator = heap.ArenaAllocator.init(heap.page_allocator);
     // defer allocator.deinit();
 
@@ -18,25 +27,25 @@ pub fn main() !void {
     // sieve.run();
     // sieve.deinit();
 
-    SaleDetail.sayHello();
-    const saleDetail = SaleDetail.init(
-        13,
-        1,
-        1000,
-        500,
-        "moi",
-    );
-    std.debug.print("saleDetail: {any}\n", .{saleDetail});
+    // SaleDetail.sayHello();
+    // const saleDetail = SaleDetail.init(
+    //     13,
+    //     1,
+    //     1000,
+    //     500,
+    //     "moi",
+    // );
+    // std.debug.print("saleDetail: {any}\n", .{saleDetail});
 
-    SaleHeader.sayHello();
-    const saleHeader = SaleHeader.init(
-        13,
-        3,
-        600,
-        300,
-        "toi",
-    );
-    std.debug.print("saleHeader: {any}\n", .{saleHeader});
+    // SaleHeader.sayHello();
+    // const saleHeader = SaleHeader.init(
+    //     13,
+    //     3,
+    //     600,
+    //     300,
+    //     "toi",
+    // );
+    // std.debug.print("saleHeader: {any}\n", .{saleHeader});
 
     // try app.init();
 
@@ -62,6 +71,8 @@ test "simple test" {
     try std.testing.expectEqual(@as(i32, 42), list.pop());
 }
 
+// Fuzz testing not yet implemented in windows.
+// What is fuzz testing?
 // test "fuzz example" {
 //     const global = struct {
 //         fn testOne(input: []const u8) anyerror!void {
