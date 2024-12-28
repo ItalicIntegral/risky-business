@@ -2,14 +2,46 @@
 //! you are building an executable. If you are making a library, the convention
 //! is to delete this file and start with root.zig instead.
 const std = @import("std");
+// const heap = std.heap;
 
-const app = @import("./app.zig");
+// const Sieve = @import("./prime.zig").Sieve;
+const SaleDetail = @import("saleDetail.zig");
+const SaleHeader = @import("saleHeader.zig");
+
+// const app = @import("./app.zig");
 
 pub fn main() !void {
-    try app.init();
+    // var allocator = heap.ArenaAllocator.init(heap.page_allocator);
+    // defer allocator.deinit();
+
+    // var sieve = try Sieve(u64).init(&allocator.allocator, size);
+    // sieve.run();
+    // sieve.deinit();
+
+    SaleDetail.sayHello();
+    const saleDetail = SaleDetail.init(
+        13,
+        1,
+        1000,
+        500,
+        "moi",
+    );
+    std.debug.print("saleDetail: {any}\n", .{saleDetail});
+
+    SaleHeader.sayHello();
+    const saleHeader = SaleHeader.init(
+        13,
+        3,
+        600,
+        300,
+        "toi",
+    );
+    std.debug.print("saleHeader: {any}\n", .{saleHeader});
+
+    // try app.init();
 
     // Prints to stderr (it's a shortcut based on `std.io.getStdErr()`)
-    // std.debug.print("All your {s} are belong to us.\n", .{"codebase"});
+    std.debug.print("All your {s} are belong to us.\n", .{"codebase"});
 
     // stdout is for the actual output of your application, for example if you
     // are implementing gzip, then only the compressed bytes should be sent to

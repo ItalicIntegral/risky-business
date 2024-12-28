@@ -82,13 +82,21 @@ pub fn build(b: *std.Build) void {
 
     const run_exe_unit_tests = b.addRunArtifact(exe_unit_tests);
 
-    const app_unit_tests = b.addTest(.{
-        .root_source_file = b.path("src/app.zig"),
+    const saleDetail_unit_tests = b.addTest(.{
+        .root_source_file = b.path("src/saleDetail.zig"),
         .target = target,
         .optimize = optimize,
     });
 
-    const run_app_unit_tests = b.addRunArtifact(app_unit_tests);
+    const run_saleDetail_unit_tests = b.addRunArtifact(saleDetail_unit_tests);
+
+    const saleHeader_unit_tests = b.addTest(.{
+        .root_source_file = b.path("src/saleHeader.zig"),
+        .target = target,
+        .optimize = optimize,
+    });
+
+    const run_saleHeader_unit_tests = b.addRunArtifact(saleHeader_unit_tests);
 
     const location_unit_tests = b.addTest(.{
         .root_source_file = b.path("src/location.zig"),
@@ -104,6 +112,7 @@ pub fn build(b: *std.Build) void {
     const test_step = b.step("test", "Run unit tests");
     test_step.dependOn(&run_lib_unit_tests.step);
     test_step.dependOn(&run_exe_unit_tests.step);
-    test_step.dependOn(&run_app_unit_tests.step);
+    test_step.dependOn(&run_saleDetail_unit_tests.step);
+    test_step.dependOn(&run_saleHeader_unit_tests.step);
     test_step.dependOn(&run_location_unit_tests.step);
 }

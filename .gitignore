@@ -1,5 +1,4 @@
-.zig-cache/*
-zig-out/
+*zig-*
 
 /tigerbeetleData/logs/*
 /tigerbeetleData/tigerbeetle
